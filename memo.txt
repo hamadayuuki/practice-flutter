@@ -1,0 +1,19 @@
+・main.dart は lib/main.dart
+
+【所感】
+
+- コメントアウトが多すぎる
+    消しても良いのか
+
+- どのクラスが何を目的としているのか
+    ・StatelessWidget : 
+    ・StatefulWidget : 
+    ・State<MyHomePage> : 
+
+- 継承とは何か
+
+- どこを変えれば、画面がどのように変化するのか
+    文字 と ボタン を描画するときはどのように変更するか
+
+
+

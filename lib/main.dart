@@ -4,6 +4,10 @@ void main() {
   runApp(const MyApp());
 }
 
+
+
+
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -21,6 +25,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+
+
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
@@ -29,6 +37,10 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
+
+
+
+
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
@@ -39,6 +51,10 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +70,25 @@ class _MyHomePageState extends State<MyHomePage> {
 
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
+            // 文字
+
+            // 太さを指定
+            Text('Bold', style: TextStyle(fontWeight: FontWeight.bold)),
+            // スタイルを指定
+            Text('Italic', style: TextStyle(fontStyle: FontStyle.italic)),
+            // サイズを指定
+            Text('fontSize = 36', style: TextStyle(fontSize: 36)),
+            // 色を指定
+            Text('Red', style: TextStyle(color: Colors.red)),
+            Container(
+              width: double.infinity,
+              color: Colors.grey,
+              // 表示位置を指定
+              child: Text('TextAlign.center', textAlign: TextAlign.center),
+            ),
+
+            /*
             const Text(
               'You have pushed the button this many times:',
             ),
@@ -61,6 +96,8 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            */
+
           ],
         ),
       ),
