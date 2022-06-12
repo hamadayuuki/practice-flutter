@@ -12,6 +12,15 @@
         要素の大きさを確認する時に使用することが多い
             「なんか余白が大きいな。どこでこの余白ができてるのかな。」
 ！流れは プログラムを見てもらう, 何を表しているか考えてもらう → 説明をする → 問題を解いてもらう → 回答
+・Button には3種類ある
+    TextButton : 影のないボタン
+    OutlinedButton : 枠線のあるボタン
+    ElevatedButton : 影のあるボタン
+・mainAxisAlignment で配置を決めれる
+・ボタンアイコンの一覧
+    https://fonts.google.com/icons?selected=Material+Icons
+
+
 
 【所感】
 
@@ -35,5 +44,9 @@
 - decoration の BoxDecoration とはどういう意味か
 
 - 画像を表示するとき、ローカルの画像を表示したいときはどうすればいいのか？
+
+- mainAxisAlignment での配置する種類はどのくらい知っておくのが良いか？
+
+- 文字のデザイン指定方法はいつ紹介するか
 
 

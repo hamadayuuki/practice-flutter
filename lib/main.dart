@@ -127,8 +127,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
              */
 
-            // 縦/横並び
 
+            // 縦/横並び
+            /*
             // 縦並び, Column
             Container(
               height: 100,
@@ -165,8 +166,111 @@ class _MyHomePageState extends State<MyHomePage> {
                   ]
               ),
             ),
+             */
 
 
+            // ボタン 3種類
+            Container(
+              // 横並び, 今回は3つのボタン(①〜③)
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,   // 端 や 要素 全ての間隔を均等にする
+                // 横並びにする要素の指定
+                children: <Widget>[
+                  // ① : 背景色のないボタン
+                  TextButton(
+                    onPressed: () { /* ボタンがタップされた時の処理 */ },
+                    child: Text('click here'),
+                  ),
+
+                  // ② : 背景色のあるボタン
+                  ElevatedButton(
+                    onPressed: () { /* ボタンがタップされた時の処理 */ },
+                    child: Text('click here'),
+                  ),
+
+                  // ③ : 枠線のみ
+                  OutlinedButton(
+                    onPressed: () { /* ボタンがタップされた時の処理 */ },
+                    child: Text('click here'),
+                  ),
+                ]
+              )
+            ),
+
+            // ボタンのオプション
+            Container(
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,   // 端 や 要素 全ての間隔を均等にする
+                    // 横並びにする要素の指定
+                    children: <Widget>[
+                      // 押せない
+                      TextButton(
+                        onPressed:  null,   // ボタンを押せない
+                        child: Text('disenable'),
+                      ),
+
+                      // デザイン
+                      ElevatedButton(
+                        onPressed: () { /* ボタンがタップされた時の処理 */ },
+                        child: Text('click here'),
+                        // ボタンのデザイン
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.red,   // 色
+                          elevation: 10,         // 影
+                        ),
+                      ),
+
+                      // 文字のデザイン
+                      OutlinedButton(
+                        onPressed: () { /* ボタンがタップされた時の処理 */ },
+                        child: Container(
+                          child: Text(
+                              'click here',                    // 文字の内容
+                              // 文字のデザイン, Text()内に書く
+                              style: TextStyle(
+                                fontSize: 30,                  // 文字の大きさ
+                                color: Colors.red,             // 文字色
+                                fontWeight: FontWeight.bold,   // 文字の太さ
+                            ),
+                          ),
+
+                        ),
+                      ),
+                    ]
+                )
+            ),
+
+            // アイコンボタン
+            Container(
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,   // 端 や 要素 全ての間隔を均等にする
+                children: <Widget>[
+                  // ハートボタン
+                  IconButton(
+                    icon: Icon(Icons.favorite),    // 種類(一覧 : https://fonts.google.com/icons?selected=Material+Icons)
+                    iconSize: 50,                  // 大きさ
+                    color: Colors.pink,            // 色
+                    onPressed: () {},              // ボタンを押した時の処理
+                  ),
+
+                  //
+                  ElevatedButton.icon(
+                    // アイコンのデザイン
+                    icon: Icon(
+                      Icons.face,                       // 種類(一覧 : https://fonts.google.com/icons?selected=Material+Icons)
+                      size: 50,                         // 大きさ
+                      color: Colors.white,              // 色
+                    ),
+                    // ボタン全体のデザイン
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.blue,             //背景色
+                    ),
+                    label: Text("押してね"),
+                    onPressed: () {},                   // ボタンを押した時の処理
+                  ),
+                ]
+              ),
+            ),
 
 
             
