@@ -26,9 +26,19 @@ class MyTodoApp extends StatelessWidget {
 }
 
 
-// ■ リスト一覧画面
-class TodoListPage extends StatelessWidget {
+// ■ リスト一覧画面, State用, 画面遷移時のデータ受け取りのため
+class TodoListPage extends StatefulWidget {
   const TodoListPage({Key? key}) : super(key: key);
+
+  @override
+  _TodoListPageState createState() => _TodoListPageState();
+}
+
+// ■ リスト一覧画面
+class _TodoListPageState extends State<TodoListPage> {
+
+  // TODOリストのデータ
+  List<String> todoList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +90,12 @@ class TodoListPage extends StatelessWidget {
             })
           );
           if (newListText != null) {
-            print(newListText);   // 確認済み, 6/12 20:43
+            //print(newListText);   // 確認済み, 6/12 20:43
+            // todoList へデータ追加
+            setState( () {
+              todoList.add(newListText);
+              print(todoList);
+            });
           } else {
             // リスト追加画面で「キャンセル」が押されたときは newListText が null になる
           }
@@ -96,6 +111,8 @@ class TodoListPage extends StatelessWidget {
 
 // + リスト追加画面, State用
 class TodoAddPage extends StatefulWidget {
+  const TodoAddPage({Key? key}) : super(key: key);
+
   @override
   _TodoAddPageState createState() => _TodoAddPageState();
 }
