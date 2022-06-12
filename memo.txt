@@ -19,6 +19,10 @@
 ・mainAxisAlignment で配置を決めれる
 ・ボタンアイコンの一覧
     https://fonts.google.com/icons?selected=Material+Icons
+・リスト表示は 高さを指定しないと 表示できない
+・変数を定義する場所が指定されていること
+・リスト と 配列 を組み合わせる時には、「ListView.bulider」を使う
+    https://www.flutter-study.dev/widgets/list-view-widget
 
 
 
@@ -48,5 +52,7 @@
 - mainAxisAlignment での配置する種類はどのくらい知っておくのが良いか？
 
 - 文字のデザイン指定方法はいつ紹介するか
+
+- 変数の定義を行うのはどこか, 変数の定義方法としては何通りあるか
 
 

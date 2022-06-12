@@ -58,7 +58,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    // 変数の定義はここで行う →→→→→
     var _screenSize = MediaQuery.of(context).size;
+    const listItems = [
+      "First Label",
+      "Second Label",
+      "Third Label"
+    ];
+    // ←←←←←
 
     return Scaffold(
       appBar: AppBar(
@@ -168,7 +176,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
              */
 
+            // ボタン, アイコンボタン
 
+            /*
             // ボタン 3種類
             Container(
               // 横並び, 今回は3つのボタン(①〜③)
@@ -271,6 +281,72 @@ class _MyHomePageState extends State<MyHomePage> {
                 ]
               ),
             ),
+             */
+
+
+            // リスト
+
+            // 単純なリスト
+            Container(
+                height: _screenSize.height * 0.5,   // 高さを決めないと表示されない
+                color: Colors.green,
+
+                // リスト
+                child: ListView(
+                  children: <Widget>[
+                    Text('Item 1'),
+                    Text('Item 2'),
+                    Text('Item 3'),
+                  ],
+                )
+            ),
+
+            // 配列を用いたリスト
+            // 配列の定義は変数を定義するところで行う
+            Container(
+              height: _screenSize.height * 0.3,    // 高さを決めないと表示されない
+              color: Colors.yellow,
+
+              //  配列をもとに作成
+              child: ListView.builder(
+                itemCount: listItems.length,
+                itemBuilder: (context, index) {
+
+                  // 表示するリストのデザイン
+                  return Container(
+                      height: 30,                   // 高さ
+                      margin: EdgeInsets.all(10),   // マージン(要素外側余白)
+                      color: Colors.blue,           // 背景色
+                      child: Text(listItems[index]) // 文字
+                  );
+                },
+              ),
+            ),
+
+            // カード をリスト表示
+            Container(
+              // 影のついたカードUIが作れる
+              child: Card(
+                child: Container(
+                  alignment: Alignment.center,   // child? 上下左右 中央揃え
+                  height: 60,
+                  color: Colors.red,
+                  width: double.infinity,
+
+                  // 表示する要素
+                  child: Text(
+                      'Card',
+                      style: TextStyle(
+                        fontSize: 30,                   // 文字の大きさ
+                        color: Colors.white,            // 文字色
+                        fontWeight: FontWeight.bold,    // 文字の太さ
+                      ),
+                  ),
+                ),
+              )
+            )
+
+
 
 
             
