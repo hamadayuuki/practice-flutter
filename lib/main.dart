@@ -71,7 +71,26 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
 
-        title: Text(widget.title),
+
+        // アプリバー(画面上)
+
+        // 左側のアイコン
+        leading: Icon(Icons.arrow_back),
+        // タイトルテキスト
+        title: Text('Hello'),
+        // 右側のアイコン一覧
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.favorite),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.more_vert),
+          ),
+        ],
+
+        
       ),
       body: Center(
 
@@ -286,6 +305,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             // リスト
 
+            /*
             // 単純なリスト
             Container(
                 height: _screenSize.height * 0.5,   // 高さを決めないと表示されない
@@ -345,6 +365,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               )
             )
+             */
 
 
 
