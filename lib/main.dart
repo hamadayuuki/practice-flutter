@@ -1,5 +1,87 @@
 import 'package:flutter/material.dart';
 
+// アプリ起動時に呼び出される
+void main() {
+  runApp(const MyTodoApp());
+}
+
+// 初めに表示する画面を指定する
+class MyTodoApp extends StatelessWidget {
+  const MyTodoApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      // アプリ名
+      title: 'My Todo App',
+      theme: ThemeData(
+        // テーマカラー
+        primarySwatch: Colors.blue,
+      ),
+      // リスト一覧画面を表示
+      home: const TodoListPage(),   // 起動時に表示する画面
+    );
+  }
+}
+
+
+// ■ リスト一覧画面
+class TodoListPage extends StatelessWidget {
+  const TodoListPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('リスト一覧画面'),
+      ),
+
+      // TODO追加ボタン
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+
+          // 画面遷移
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) {
+              return TodoAddPage();
+            })
+          );
+
+        },
+        child: Icon(Icons.add)
+      )
+
+    );
+  }
+}
+
+
+// + リスト追加画面
+class TodoAddPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: TextButton(
+          onPressed: () {
+            // 前画面へ戻る, .pop()
+            Navigator.of(context).pop();
+          },
+          child: Text("リスト追加画面(クリックで戻る)")
+        )
+      )
+    );
+  }
+}
+
+
+
+
+
+
+// ================================================================================
+// Flutter 練習用
+/*
 void main() {
   runApp(const MyApp());
 }
@@ -28,7 +110,7 @@ class MyApp extends StatelessWidget {
 
 
 
-
+// State を使うクラスを指定する
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
@@ -41,7 +123,8 @@ class MyHomePage extends StatefulWidget {
 
 
 
-
+// State を使うクラス
+// 変数 や Widget を作る, Widget の作り方はこれまでと同じ
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -74,6 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
         // アプリバー(画面上)
 
+        /*
         // 左側のアイコン
         leading: Icon(Icons.arrow_back),
         // タイトルテキスト
@@ -89,8 +173,9 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.more_vert),
           ),
         ],
+         */
 
-        
+
       ),
       body: Center(
 
@@ -370,7 +455,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-            
+
             /*
             const Text(
               'You have pushed the button this many times:',
@@ -392,3 +477,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+ */

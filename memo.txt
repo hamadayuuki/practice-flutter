@@ -24,6 +24,8 @@
 ・リスト と 配列 を組み合わせる時には、「ListView.bulider」を使う
     https://www.flutter-study.dev/widgets/list-view-widget
 ・アプリバー は「appBar: AppBar()」にプログラムを書く
+！！Widget を紹介する時には 最後にまとめを話す
+・画面遷移をどこでどのようなプログラムで行うか
 
 
 
@@ -57,5 +59,11 @@
 - 変数の定義を行うのはどこか, 変数の定義方法としては何通りあるか
 
 - AppBar のタイトルをつける時には、すでに用意されている「タイトルのプログラム」を削除する必要あり
+
+- Widget の説明を行った後、TODOアプリを作るときに どうやってプログラムを整理するか
+
+- 「Unimplemented handling of missing static target」エラーが発生したとき
+    ① : プログラムに誤りがないか確認
+    ② : 画面上の「▷」マークを押す
 
 
