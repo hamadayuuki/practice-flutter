@@ -5,6 +5,7 @@ void main() {
   runApp(const MyTodoApp());
 }
 
+
 // 初めに表示する画面を指定する
 class MyTodoApp extends StatelessWidget {
   const MyTodoApp({Key? key}) : super(key: key);
@@ -33,7 +34,38 @@ class TodoListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('リスト一覧画面'),
+
+        // ① : TODOをリストで表示 ===========
+        child: ListView(
+          children: <Widget>[
+
+            // にんじん
+            Card(child: ListTile(
+              title: Text("にんじんを買う")
+              )
+            ),
+
+            // 玉ねぎ
+            Card(child: ListTile(
+                title: Text("玉ねぎを買う")
+              )
+            ),
+
+            // じゃがいも
+            Card(child: ListTile(
+                title: Text("じゃがいもを買う")
+              )
+            ),
+
+            // カレー粉
+            Card(child: ListTile(
+                title: Text("カレー粉を買う")
+              )
+            ),
+
+          ]
+        ),
+        // ① ======================
       ),
 
       // TODO追加ボタン
