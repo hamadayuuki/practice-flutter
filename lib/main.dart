@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
             // Containar Widget
-
+            /*
             // 幅や高さ, 文字色, パディング, マージン
             Container(
               width: 100,                   // 幅
@@ -125,6 +125,49 @@ class _MyHomePageState extends State<MyHomePage> {
               width: _screenSize.width * 0.8,
               height: _screenSize.height * 0.3,
             ),
+             */
+
+            // 縦/横並び
+
+            // 縦並び, Column
+            Container(
+              height: 100,
+              color: Colors.red,
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(50),
+              // Column は child に指定する
+              child: Column(
+                // 要素を配列として格納
+                  children: <Widget>[
+                    Text('first line'),
+                    Text('second line'),
+                    Text('third line'),
+                  ]
+              ),
+            ),
+
+            // 横並び, Row
+            Container(
+              child: Row(
+                // 要素を配列として格納
+                  children: <Widget>[
+                    // Container で表現, 並べる要素ごとに背景色や大きさを指定可能になる
+                    Container(color: Colors.blue, child: Text("First Line")),
+                    Container(color: Colors.yellow, child: Text("Second Line")),
+                    Container(
+                        color: Colors.red,
+                        child: Text("Third Line"),
+                        width: 100,
+                        height: 30,
+                        margin: EdgeInsets.all(20),
+
+                    ),
+                  ]
+              ),
+            ),
+
+
+
 
             
             /*
