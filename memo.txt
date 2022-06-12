@@ -1,4 +1,16 @@
 ・main.dart は lib/main.dart
+・Container を用いることでサイズ・背景・余白・枠線などを指定可能
+    https://www.flutter-study.dev/widgets/container-widget
+・Container( ) などの ()の後 は基本的に「,」を入れる
+・margin, padding は要素を2つ並べて実行結果を比較するのが良い
+    margin 10, 20, 50, 100
+    padding 10, 20, 50, 100 の場合
+・padding を用いて 領域ごとに色が異なる ということを、問題として出す
+・Container のドキュメント(https://api.flutter.dev/flutter/widgets/Container-class.html)
+・どの要素をどこに書き込めばいいのか理解しておく
+    背景色は decoration() 
+        要素の大きさを確認する時に使用することが多い
+            「なんか余白が大きいな。どこでこの余白ができてるのかな。」
 
 【所感】
 
@@ -15,5 +27,12 @@
 - どこを変えれば、画面がどのように変化するのか
     文字 と ボタン を描画するときはどのように変更するか
 
+- Widget 一覧を確認できるサイトはないのか
+    可能な限り多くのWidgetを網羅的に
+    https://iotmanablog.hatenablog.com/entry/2021/03/09/063111
+
+- decoration の BoxDecoration とはどういう意味か
+
+- 画像を表示するとき、ローカルの画像を表示したいときはどうすればいいのか？
 
 

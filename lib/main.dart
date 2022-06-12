@@ -58,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var _screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
@@ -72,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
 
             // 文字
-
+            /*
             // 太さを指定
             Text('Bold', style: TextStyle(fontWeight: FontWeight.bold)),
             // スタイルを指定
@@ -87,7 +88,45 @@ class _MyHomePageState extends State<MyHomePage> {
               // 表示位置を指定
               child: Text('TextAlign.center', textAlign: TextAlign.center),
             ),
+            */
 
+
+            // Containar Widget
+
+            // 幅や高さ, 文字色, パディング, マージン
+            Container(
+              width: 100,                   // 幅
+              height: 100,                  // 高さ
+              color: Colors.red,            // 背景色
+              child: Text("あいうえお"),      // 文字
+              padding: EdgeInsets.all(8),   // パディング (要素内側余白)
+              margin: EdgeInsets.all(10),   // マージン   (要素外側余白)
+            ),
+
+            // 枠線
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.blue, width: 10),   // 枠線
+                borderRadius: BorderRadius.circular(8),             // 角丸
+              ),
+              child: Text('border'),
+              padding: EdgeInsets.all(50),
+              margin: EdgeInsets.all(50),
+            ),
+
+            // 画像
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.red,   // 背景色, decoration内に入れる
+                image: DecorationImage(
+                  image: NetworkImage("https://www.ghibli.jp/gallery/chihiro025.jpg"),   // インターネットの画像
+                ),
+              ),
+              width: _screenSize.width * 0.8,
+              height: _screenSize.height * 0.3,
+            ),
+
+            
             /*
             const Text(
               'You have pushed the button this many times:',
