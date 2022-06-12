@@ -70,14 +70,20 @@ class TodoListPage extends StatelessWidget {
 
       // TODO追加ボタン
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
 
           // 画面遷移
-          Navigator.of(context).push(
+          //    ↓ リスト追加画面から渡される値を受け取る
+          final newListText = await Navigator.of(context).push(
             MaterialPageRoute(builder: (context) {
-              return TodoAddPage();
+              return TodoAddPage();   // 遷移先
             })
           );
+          if (newListText != null) {
+            print(newListText);   // 確認済み, 6/12 20:43
+          } else {
+            // リスト追加画面で「キャンセル」が押されたときは newListText が null になる
+          }
 
         },
         child: Icon(Icons.add)
@@ -86,6 +92,7 @@ class TodoListPage extends StatelessWidget {
     );
   }
 }
+
 
 // + リスト追加画面, State用
 class TodoAddPage extends StatefulWidget {
@@ -123,7 +130,11 @@ class _TodoAddPageState extends State<TodoAddPage> {
               width: double.infinity,   // 横いっぱいに広げる
               child: ElevatedButton(
                 //color: Colors.blue,
-                onPressed: () { /*ボタンを押した時の処理*/ },
+                onPressed: () {
+                  // 前の画面へ遷移, .pop()
+                  // 入力した文字列 を 遷移先へ渡す
+                    Navigator.of(context).pop(_text);
+                  },
                 child: Text(
                   "リスト追加",
                   style: TextStyle(
