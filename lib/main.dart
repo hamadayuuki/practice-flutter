@@ -43,9 +43,14 @@ class _TodoListPageState extends State<TodoListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // アプリバー(画面上)
+      appBar: AppBar(
+        title: Text("リスト一覧"),
+      ),
+
+      // 画面
       body: Center(
 
-        // ① : TODOをリストで表示 ===========
         // 配列をもとに ListView を作るため、.bulider を使用
         child: ListView.builder(
           itemCount: todoList.length,
@@ -57,38 +62,7 @@ class _TodoListPageState extends State<TodoListPage> {
               );
             }
         )
-        /*
-        ListView(
-          children: <Widget>[
 
-            // にんじん
-            Card(child: ListTile(
-              title: Text("にんじんを買う")
-              )
-            ),
-
-            // 玉ねぎ
-            Card(child: ListTile(
-                title: Text("玉ねぎを買う")
-              )
-            ),
-
-            // じゃがいも
-            Card(child: ListTile(
-                title: Text("じゃがいもを買う")
-              )
-            ),
-
-            // カレー粉
-            Card(child: ListTile(
-                title: Text("カレー粉を買う")
-              )
-            ),
-            
-          ]
-        ),
-        // ① ======================
-        */
       ),
 
       // TODO追加ボタン
@@ -138,6 +112,12 @@ class _TodoAddPageState extends State<TodoAddPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // アプリバー(画面上)
+        appBar: AppBar(
+          title: Text("リスト追加"),
+        ),
+
+        // 画面
       body: Container(
         padding: EdgeInsets.all(64),
         child: Column(
