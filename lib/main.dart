@@ -46,7 +46,19 @@ class _TodoListPageState extends State<TodoListPage> {
       body: Center(
 
         // ① : TODOをリストで表示 ===========
-        child: ListView(
+        // 配列をもとに ListView を作るため、.bulider を使用
+        child: ListView.builder(
+          itemCount: todoList.length,
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
+                  title: Text(todoList[index]),
+                )
+              );
+            }
+        )
+        /*
+        ListView(
           children: <Widget>[
 
             // にんじん
@@ -72,10 +84,11 @@ class _TodoListPageState extends State<TodoListPage> {
                 title: Text("カレー粉を買う")
               )
             ),
-
+            
           ]
         ),
         // ① ======================
+        */
       ),
 
       // TODO追加ボタン
