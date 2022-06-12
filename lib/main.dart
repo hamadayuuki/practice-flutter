@@ -87,9 +87,17 @@ class TodoListPage extends StatelessWidget {
   }
 }
 
+// + リスト追加画面, State用
+class TodoAddPage extends StatefulWidget {
+  @override
+  _TodoAddPageState createState() => _TodoAddPageState();
+}
 
 // + リスト追加画面
-class TodoAddPage extends StatelessWidget {
+class _TodoAddPageState extends State<TodoAddPage> {
+
+  String _text = "";   // 入力した文字が入る
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +107,14 @@ class TodoAddPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,   // children の要素を均等に並べる
           children: <Widget>[
 
-            TextField(),   // 文字入力
+            TextField(
+              onChanged: (String inputString) {
+                setState( () {
+                  _text = inputString;
+                  //print(_text);
+                });
+              }
+            ),   // 文字入力
 
             const SizedBox(height: 8),   // 余白
 
