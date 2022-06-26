@@ -13,7 +13,7 @@ class MyTodoApp extends StatelessWidget {
     return MaterialApp(
       title: 'My Todo App',   // アプリ名
       theme: ThemeData(
-        primarySwatch: Colors.blue,   // テーマカラー
+        primarySwatch: Colors.green,   // テーマカラー
       ),
       
       // リスト一覧画面を表示
@@ -38,11 +38,23 @@ class _TodoListPageState extends State<TodoListPage> {
     return Scaffold(
       
       appBar: AppBar(
-        title: Text("リスト一覧"),
+        title: Text("TODOアプリ"),
       ),
 
       body: Center(
-        child: Text("Hello World")
+
+        child: ElevatedButton(
+
+          onPressed: (){ },
+          child: Text(
+            "リスト追加",
+            style: TextStyle(
+                color: Colors.white
+            )
+          )
+
+        )// ElevatedButton
+
       ),
 
     );// Scaffold
