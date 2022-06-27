@@ -43,27 +43,12 @@ class _TodoListPageState extends State<TodoListPage> {
 
       body: Center(
 
-        child: Column(
-          children: [
-            Text("TODOリスト1"),
-            Text("TODOリスト2"),
-            Text("TODOリスト3"),
-            Text("TODOリスト4"),
-            Text("TODOリスト5")
-          ]
-        )// Column
-
-        /*
-        child: Row(
-          children: [
-            Text("TODOリスト1"),
-            Text("TODOリスト2"),
-            Text("TODOリスト3"),
-            Text("TODOリスト4"),
-            Text("TODOリスト5")
-          ]
-        )// Row
-        */
+        child: ListView.builder(
+          itemCount: 10,   // リスト数
+          itemBuilder: (context, index) {
+            return Text("TODOリスト" + index.toString());
+          }
+        )// ListView.builder
 
       ),
 
