@@ -33,6 +33,9 @@ class TodoListPage extends StatefulWidget {
 
 class _TodoListPageState extends State<TodoListPage> {
 
+  // TODOリストのデータ
+  List<String> todoList = ["あいうえお", "かきくけこ", "さしすせそ", "たちつてと"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,9 +47,9 @@ class _TodoListPageState extends State<TodoListPage> {
       body: Center(
 
         child: ListView.builder(
-          itemCount: 10,   // リスト数
+          itemCount: todoList.length,   // リスト数 (=配列の要素数)
           itemBuilder: (context, index) {
-            return Text("TODOリスト" + index.toString());
+            return Text(todoList[index]);
           }
         )// ListView.builder
 
