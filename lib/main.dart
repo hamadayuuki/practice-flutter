@@ -49,7 +49,11 @@ class _TodoListPageState extends State<TodoListPage> {
         child: ListView.builder(
           itemCount: todoList.length,   // リスト数 (=配列の要素数)
           itemBuilder: (context, index) {
-            return Text(todoList[index]);
+            return Card(
+              child: ListTile(
+                title: Text(todoList[index]),
+              )
+            );// Card
           }
         )// ListView.builder
 
