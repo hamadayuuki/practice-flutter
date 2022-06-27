@@ -43,17 +43,27 @@ class _TodoListPageState extends State<TodoListPage> {
 
       body: Center(
 
-        child: ElevatedButton(
+        child: Column(
+          children: [
+            Text("TODOリスト1"),
+            Text("TODOリスト2"),
+            Text("TODOリスト3"),
+            Text("TODOリスト4"),
+            Text("TODOリスト5")
+          ]
+        )// Column
 
-          onPressed: (){ },
-          child: Text(
-            "リスト追加",
-            style: TextStyle(
-                color: Colors.white
-            )
-          )
-
-        )// ElevatedButton
+        /*
+        child: Row(
+          children: [
+            Text("TODOリスト1"),
+            Text("TODOリスト2"),
+            Text("TODOリスト3"),
+            Text("TODOリスト4"),
+            Text("TODOリスト5")
+          ]
+        )// Row
+        */
 
       ),
 
